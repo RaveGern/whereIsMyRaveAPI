@@ -1,8 +1,7 @@
-const Users = require('../models/users.js')
+const MyEvents = require('../models/events.js')
 
 module.exports = (req, res) => {
-	console.log('postEvents', req.body)
-	Users.create(req.body)
+	MyEvents.find({})
 		.then(data => {
 			res.send(data)
 		})
