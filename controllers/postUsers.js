@@ -1,7 +1,7 @@
 const Users = require('../models/users.js')
 
 module.exports = (req, res) => {
-	console.log('postUsers', req.body)
+	console.log('postJoin', req.body)
 	Users.create(req.body)
 		.then(data => {
 			res.send(data)

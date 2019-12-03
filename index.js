@@ -26,6 +26,7 @@ app.get('/users', require('./controllers/getUsers'))
 
 app.post('/events', require('./controllers/postEvents'))
 app.post('/users', require('./controllers/postUsers'))
+app.post('/join', require('./controllers/postJoin'))
 app.post('/email', require('./controllers/sentEmail'))
 app.post('/event/:id', require('./controllers/sentEmail'))
 
