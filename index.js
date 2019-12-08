@@ -3,8 +3,9 @@ const cors = require('cors')
 require('dotenv').config()
 const app = express()
 const DB = require('./database.js')
-const Events = require('./models/events.js')
-const Users = require('./models/users.js')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
 //Middleware
 
 const bodyParser = require('body-parser')
@@ -26,9 +27,12 @@ app.get('/users', require('./controllers/getUsers'))
 
 app.post('/events', require('./controllers/postEvents'))
 app.post('/users', require('./controllers/postUsers'))
-app.post('/join', require('./controllers/postJoin'))
 app.post('/email', require('./controllers/sentEmail'))
 app.post('/event/:id', require('./controllers/sentEmail'))
+app.post('/login', require('./controllers/Login'))
+
+//remove
+app.delete('/events', require('./controllers/removeEventID'))
 
 app.listen(1337, () => {
 	console.log('Ready on Port 1337')

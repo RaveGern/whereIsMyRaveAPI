@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 module.exports = require('mongoose').model('events', {
 	name: {
 		type: String
@@ -23,5 +24,9 @@ module.exports = require('mongoose').model('events', {
 	},
 	code: {
 		type: Number
+	},
+	host: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'users'
 	}
 })

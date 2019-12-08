@@ -3,6 +3,10 @@ const Events = require('../models/events.js')
 module.exports = (req, res) => {
 	console.log('postEvents', req.body)
 	Events.create(req.body)
+		.populate({
+			path: 'users',
+			select: 'name'
+		})
 		.then(data => {
 			res.send(data)
 		})
