@@ -12,7 +12,9 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(cors({ origin: 'http://whereismyrave.herokuapp.com' }))
+app.use(
+	cors({ origin: 'http://whereismyrave.herokuapp.com', credentials: true })
+)
 
 //GET
 app.get('/', (req, res) => {
