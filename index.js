@@ -1,10 +1,10 @@
 const express = require('express')
 const cors = require('cors')
-require('dotenv').config()
 const app = express()
 const DB = require('./database.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 //Middleware
 
@@ -19,8 +19,9 @@ app.get('/', (req, res) => {
 	res.send('Welcome to Rave API')
 })
 
-app.get('/MyEvents', require('./controllers/getEvents'))
+app.get('/events', require('./controllers/getEvents'))
 app.get('/event/:id', require('./controllers/getEventID'))
+app.get('/MyEvents', require('./controllers/getMyEvents'))
 app.get('/users', require('./controllers/getUsers'))
 
 //POST
@@ -34,8 +35,8 @@ app.post('/login', require('./controllers/Login'))
 //remove
 app.delete('/events', require('./controllers/removeEventID'))
 
-app.listen(1337, () => {
-	console.log('Ready on Port 1337')
+app.listen(process.env.PORT, () => {
+	console.log(`Connected to Localhost ${process.env.PORT}`)
 })
 
 module.exports = app

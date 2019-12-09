@@ -13,7 +13,7 @@ module.exports = (req, res) => {
 				// 2. If email found, match passwords
 				bcrypt.compare(req.body.password, user.password, (err, match) => {
 					if (match) {
-						let token = jwt.sign(user.toObject(), 'secret')
+						let token = jwt.sign(user.toObject(), process.env.SECRET)
 						res.send({ token })
 					} else {
 						// 3. If passwords don't match, response "nope!"
