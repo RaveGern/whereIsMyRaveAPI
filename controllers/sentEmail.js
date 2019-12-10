@@ -16,7 +16,7 @@ module.exports = (req, res) => {
 		to: req.body.email,
 		subject: 'Sending Email using Node.js',
 		text:
-			'We would like to welcome you to our next Party, make sure to invite some Friends and join the fun with the following Code!' +
+			'You just received a very secret invitation to an upcoming Rave.Check out https://whereismyrave.herokuapp.com/ and insert the following Code!' +
 			`${req.body.code}`
 	}
 
