@@ -16,7 +16,7 @@ module.exports = (req, res) => {
 						let token = jwt.sign(user.toObject(), process.env.SECRET)
 						res.send({ token })
 					} else {
-						// 3. If passwords don't match, response "nope!"
+						// 3. If passwords don't match, response with:"
 						res.send(`Wrong password and/or E-Mail address.`)
 					}
 				})

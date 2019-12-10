@@ -1,29 +1,36 @@
 const mongoose = require('mongoose')
 module.exports = require('mongoose').model('events', {
 	name: {
-		type: String
+		type: String,
+		required: [true, 'Name is required']
 	},
 	day: {
 		type: Date,
 		default: Date.now
 	},
 	start: {
-		type: Date
+		type: Date,
+		required: [true, 'Start Date is required']
 	},
 	end: {
-		type: Date
+		type: Date,
+		required: [true, 'End Date is required']
 	},
 	lat: {
-		type: Number
+		type: Number,
+		required: [true, 'Lat is required']
 	},
 	lng: {
-		type: Number
+		type: Number,
+		required: [true, 'Lng is required']
 	},
 	genre: {
-		type: String
+		type: String,
+		required: [true, 'Genre is required']
 	},
 	code: {
-		type: Number
+		type: String,
+		required: [true, 'Code is required']
 	},
 	host: {
 		type: mongoose.Schema.Types.ObjectId,

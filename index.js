@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(
-	cors({ origin: 'https://whereismyrave.herokuapp.com', credentials: true })
+	cors({
+		origin: ['https://whereismyrave.herokuapp.com', 'http://localhost:3000'],
+		credentials: true
+	})
 )
 
 //GET

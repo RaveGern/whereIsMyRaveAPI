@@ -12,6 +12,6 @@ module.exports = require('mongoose').model('users', {
 		required: [true, 'Password is required']
 	},
 	code: {
-		type: Number
+		type: String
 	}
 })
